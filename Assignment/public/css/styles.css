@@ -1,0 +1,27 @@
+
+html,body {
+  height: 100%;
+  background-color: #4791D2;
+}
+
+body {
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+}
+
+.row {
+  margin-top: 80px;
+}
+
+
+h4 {
+  padding-bottom: 30px;
+  color: #B8BDC1;
+}
+
+
+h2 {
+  margin-top: 15px;
+  color: #68757E;
+}
+
