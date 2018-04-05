@@ -10,6 +10,8 @@ var express = require('express');
     var methodOverride = require('method-override');
     var morgan = require('morgan');
     
+var Register=require('./Register.js')
+
    app.use(morgan('dev'));                                         
     app.use(bodyParser.urlencoded({'extended':'true'}));            
     app.use(bodyParser.json());                                     
@@ -20,72 +22,6 @@ var express = require('express');
 //mongodb connection
   mongoose.Promise = global.Promise;
     mongoose.connect('mongodb://localhost/employee');
-//schema
-      var EmployeeSchema = new mongoose.Schema ({
-        firstname : {
-            type: String
-            //required:true
-        },
-        lastname : {
-            type: String
-            //required:true
-        },
-        email:{
-            type:String
-            //required:true
-        },
-        dob:{
-            type:String
-           // required:true
-        },
-        doj:{
-            type:String
-           // required:true
-        },
-        pan:{
-            type:Number,
-            //required:true
-        },
-        aadhar:{
-            type:Number,
-            //required:true
-        },
-        address:{
-            type:String,
-            //required:true
-        },
-        city:{
-            type:String,
-            //required:true
-        },
-        state:{
-            type:String,
-            //required:true
-        },
-        zipcode:{
-            type:Number,
-            //required:true
-        },
-        lastemployeename:{
-            type:String,
-            //required:true
-        },
-        hsc:{
-            type:Number,
-            //required:true
-        },
-        ssc:{
-            type:Number,
-            //required:true
-        },
-        emergencycontact:{
-              type:Number
-              //required:true  
-        }
-
-     })
-     var Register = mongoose.model('employees',EmployeeSchema ); //collection employees in employee database 
-    app.use(bodyParser.json());  
 
     var storage = multer.diskStorage({ //storage settings
         destination: function (req, file, cb) {
@@ -170,7 +106,7 @@ var express = require('express');
                              //   res.render('display.jade',{members:doc})
                            // else res.send('Successfully submitted!');
                             })
-                        setTimeout(function(){console.log('your name')},7000);
+                        //setTimeout(function(){console.log('your name')},7000);
                     });
                     // for (var i = 0 ; i < result.length; i++) {
                         
